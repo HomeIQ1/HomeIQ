@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+:root {
+  /* HomeIQ palette — "property intelligence" */
+  --ink: #0f1b2d;          /* deep navy ink, primary surface */
+  --ink-soft: #1c2c44;     /* raised navy panels */
+  --paper: #f7f5f0;        /* warm off-white background */
+  --paper-card: #ffffff;   /* card surface */
+  --signal: #e8924a;       /* warm amber — the single accent */
+  --signal-deep: #c9742f;
+  --sage: #4a7c6f;         /* secondary teal */
+  --line: #e3ddd2;         /* hairline on paper */
+  --line-dark: #2a3a55;    /* hairline on ink */
+  --muted: #6b7585;        /* secondary text */
+  --muted-light: #9aa3b2;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  padding: 0;
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-family: Georgia, "Times New Roman", serif;
+  letter-spacing: -0.02em;
+}
+
+.tnum { font-variant-numeric: tabular-nums; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .fade-up { animation: fadeUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) both; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+button:focus-visible, a:focus-visible, input:focus-visible {
+  outline: 2px solid var(--signal);
+  outline-offset: 2px;
+}
+
+/* Responsive */
+@media (max-width: 880px) {
+  .hero-grid { grid-template-columns: 1fr !important; gap: 36px !important; }
+  .stat-grid { grid-template-columns: 1fr !important; }
+  .dash-grid { grid-template-columns: 1fr !important; }
+}
